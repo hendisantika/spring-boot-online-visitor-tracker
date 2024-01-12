@@ -34,4 +34,15 @@ public final class HttpRequestResponseUtils {
 
         return request.getRemoteAddr();
     }
+
+    public static String getRequestUrl() {
+        if (RequestContextHolder.getRequestAttributes() == null) {
+            return "";
+        }
+
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
+                .getRequest();
+
+        return request.getRequestURL().toString();
+    }
 }
