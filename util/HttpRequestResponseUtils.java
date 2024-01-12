@@ -45,4 +45,16 @@ public final class HttpRequestResponseUtils {
 
         return request.getRequestURL().toString();
     }
+
+    public static String getRequestUri() {
+        if (RequestContextHolder.getRequestAttributes() == null) {
+            return "";
+        }
+
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
+                .getRequest();
+
+        return request.getRequestURI();
+    }
+
 }
