@@ -93,4 +93,15 @@ public final class HttpRequestResponseUtils {
 
         return userAgent != null ? userAgent : request.getHeader("user-agent");
     }
+
+    public static String getRequestMethod() {
+        if (RequestContextHolder.getRequestAttributes() == null) {
+            return "";
+        }
+
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
+                .getRequest();
+
+        return request.getMethod();
+    }
 }
