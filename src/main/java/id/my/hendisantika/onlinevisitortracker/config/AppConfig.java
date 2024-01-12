@@ -1,5 +1,6 @@
 package id.my.hendisantika.onlinevisitortracker.config;
 
+import id.my.hendisantika.onlinevisitortracker.logger.VisitorLogger;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -19,7 +20,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @RequiredArgsConstructor
 public class AppConfig implements WebMvcConfigurer {
 
-    private VisitorLogger visitorLogger;
+    private final VisitorLogger visitorLogger;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
