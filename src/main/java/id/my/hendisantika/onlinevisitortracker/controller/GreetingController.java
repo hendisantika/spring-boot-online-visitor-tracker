@@ -27,4 +27,9 @@ public class GreetingController {
     public ResponseEntity<String> greet(@PathVariable String name) {
         return new ResponseEntity<>("Hello, " + name, HttpStatus.OK);
     }
+
+    @GetMapping("/login")
+    public ResponseEntity<String> login() {
+        return new ResponseEntity<>("Hello, this is a secured page", HttpStatus.OK);
+    }
 }
