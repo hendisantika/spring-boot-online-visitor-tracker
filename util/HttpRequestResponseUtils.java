@@ -104,4 +104,27 @@ public final class HttpRequestResponseUtils {
 
         return request.getMethod();
     }
+
+    public static String getLoggedInUser() {
+        String userJson = null;
+
+        if (SecurityContextHolder.getContext().getAuthentication() != null
+                && SecurityContextHolder.getContext().getAuthentication().isAuthenticated()
+                && !(SecurityContextHolder.getContext().getAuthentication() instanceof AnonymousAuthenticationToken)) {
+
+            User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+            ObjectMapper mapper = new ObjectMapper();
+
+            try {
+                userJson = mapper.writeValueAsString(user);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+
+            return userJson;
+        }
+
+        return userJson;
+    }
 }
