@@ -57,4 +57,16 @@ public final class HttpRequestResponseUtils {
         return request.getRequestURI();
     }
 
+    public static String getRefererPage() {
+        if (RequestContextHolder.getRequestAttributes() == null) {
+            return "";
+        }
+
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
+                .getRequest();
+
+        String referer = request.getHeader("Referer");
+
+        return referer != null ? referer : request.getHeader("referer");
+    }
 }
