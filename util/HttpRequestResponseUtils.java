@@ -80,4 +80,17 @@ public final class HttpRequestResponseUtils {
 
         return request.getQueryString();
     }
+
+    public static String getUserAgent() {
+        if (RequestContextHolder.getRequestAttributes() == null) {
+            return "";
+        }
+
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
+                .getRequest();
+
+        String userAgent = request.getHeader("User-Agent");
+
+        return userAgent != null ? userAgent : request.getHeader("user-agent");
+    }
 }
