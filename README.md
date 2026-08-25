@@ -52,6 +52,8 @@ Open [http://localhost:8081/h2-console/](http://localhost:8081/h2-console/) and 
 - Username: `naruto`
 - Password: `naruto`
 
+![H2 console showing tracked visitors](docs/images/h2-console-screenshot.jpg)
+
 ## Building & Testing
 
 ```bash
