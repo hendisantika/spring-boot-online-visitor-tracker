@@ -46,6 +46,10 @@ table so you can inspect visitor activity through the H2 console.
 
 ![Hello endpoint](docs/images/hello-endpoint-screenshot.jpg)
 
+Response from `GET /login` with Basic Auth credentials supplied:
+
+![Login endpoint](docs/images/login-endpoint-screenshot.jpg)
+
 ## H2 Console
 
 Open [http://localhost:8081/h2-console/](http://localhost:8081/h2-console/) and connect with:
