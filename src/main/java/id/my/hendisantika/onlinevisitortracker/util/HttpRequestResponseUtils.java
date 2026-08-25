@@ -1,13 +1,13 @@
 package id.my.hendisantika.onlinevisitortracker.util;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.ObjectMapper;
 
 /**
  * Created by IntelliJ IDEA.
@@ -129,7 +129,7 @@ public final class HttpRequestResponseUtils {
 
             try {
                 userJson = mapper.writeValueAsString(user);
-            } catch (JsonProcessingException e) {
+            } catch (JacksonException e) {
                 e.printStackTrace();
             }
 
