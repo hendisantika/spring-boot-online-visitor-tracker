@@ -1,5 +1,7 @@
 # spring-boot-online-visitor-tracker
 
+[![Java CI with Maven](https://github.com/hendisantika/spring-boot-online-visitor-tracker/actions/workflows/maven.yml/badge.svg)](https://github.com/hendisantika/spring-boot-online-visitor-tracker/actions/workflows/maven.yml)
+
 A small Spring Boot application that logs every incoming HTTP request (IP, method, URL, referer, user agent,
 authenticated user, etc.) into an H2 database via a `HandlerInterceptor`, secured with Spring Security.
 
